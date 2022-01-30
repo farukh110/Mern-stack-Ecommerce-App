@@ -15,8 +15,22 @@ connectDB();
 // end connect database
 
 
-app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT, () => {
 
     console.log(`server is working now on localhost:${process.env.PORT}`);
     
+});
+
+// unhandled promise rejection
+
+process.on("unhandledRejection", (err) => {
+
+    console.log(` Error: ${err.message} `);
+    console.log(` shutting down the server `);
+
+    server.close(() => {
+
+        process.exit(1);
+        
+    });
 });
