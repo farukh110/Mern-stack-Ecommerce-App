@@ -30,7 +30,7 @@ app.listen(process.env.PORT, () => {
     
 });
 
-// unhandled promise rejection
+// start unhandled promise rejection
 
 process.on("unhandledRejection", (err) => {
 
@@ -43,3 +43,5 @@ process.on("unhandledRejection", (err) => {
         
     });
 });
+
+// end unhandled promise rejection
