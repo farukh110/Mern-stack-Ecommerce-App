@@ -24,7 +24,7 @@ connectDB();
 // end connect database
 
 
-app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT, () => {
 
     console.log(`server is working now on localhost:${process.env.PORT}`);
     
