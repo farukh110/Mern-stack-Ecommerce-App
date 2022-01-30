@@ -29,8 +29,6 @@ app.listen(process.env.PORT, () => {
     console.log(`server is working now on localhost:${process.env.PORT}`);
     
 });
-<<<<<<< Updated upstream
-=======
 
 // unhandled promise rejection
 
@@ -45,4 +43,3 @@ process.on("unhandledRejection", (err) => {
         
     });
 });
->>>>>>> Stashed changes
