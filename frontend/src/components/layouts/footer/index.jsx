@@ -71,7 +71,7 @@ const Footer = () => {
 
                 </div>
 
-                <div className='footer-menu-content mt-md-3 pt-md-5 pt-sm-5 pt-4 pb-4 pb-md-4'>
+                <div className='footer-menu-content mt-md-1 pt-md-5 pt-sm-5 pt-4 pb-4 pb-md-4'>
 
                     <div className='container'>
 
@@ -99,7 +99,7 @@ const Footer = () => {
 
                                 <div className='content'>
 
-                                    <h4 className='text-light text-uppercase'> Orphans Projects </h4>
+                                    <h4 className='text-light text-uppercase'> Orphans </h4>
 
                                     <ul className='menu-list mt-md-2 mt-sm-2 mt-3'>
                                         <li><a href="!#"> Basic Care </a></li>

@@ -3,8 +3,7 @@
 }
 
 .footer .logo {
-    filter: invert(1) !important;
-    height: 70px;
+    height: 60px;
 }
 
 .footer h4 {
