@@ -1,0 +1,14 @@
+.logo {
+    height: 60px;
+}
+
+.custom-navigation {
+    background: #fff !important;
+    box-shadow: 0px 0px 14px 0px #c1b4b4;
+}
+
+.custom-navigation .custom-menu a {
+
+    font-weight: 500;
+    font-size: 18px;
+}
