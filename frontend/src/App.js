@@ -5,6 +5,7 @@ import webFont from 'webfontloader';
 import Footer from './components/layouts/footer';
 import Header from './components/layouts/header';
 import HomePage from './pages/home';
+import ProductDetails from './pages/productDetails';
 
 export const App = () => {
 
@@ -33,6 +34,7 @@ export const App = () => {
         <Routes>
 
         <Route exact path='/' element={<HomePage />}  />
+        <Route exact path='/product/:id' element={<ProductDetails />}  />
 
         </Routes>
         {/* end pages */}
