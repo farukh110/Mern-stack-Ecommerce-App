@@ -1,33 +1,64 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Product from '../../components/layouts/product';
+import MetaData from '../../components/layouts/helmet';
 import './index.css';
+import { useSelector, useDispatch } from "react-redux";
+import { getProduct } from '../../actions/product/productAction';
+import Loader from '../../components/layouts/loader';
+import { useAlert } from 'react-alert';
 
 const HomePage = () => {
 
-    const product = {
-        name: "Sadaqah",
-        images: [{ url: "https://najafyia.org/images/sadaqa-banner.jpg" }],
-        price: "50 USD",
-        _id: "sadaqah"
-    }
+    const alert = useAlert();
+    const dispatch = useDispatch();
+    const { loading, error, products, productsCount } = useSelector(
+        (state) => state.products
+    );
+
+    useEffect(() => {
+
+        if (error) {
+            return alert.error(error);
+        }
+
+        dispatch(getProduct());
+
+    }, [dispatch, error, alert]);
+
 
     return (
         <>
 
-            <div className='container mt-md-5 mb-md-5'>
+            {loading ? <Loader /> : (
 
-                <div className='row'>
+                <div>
 
-                    <div className='col-md-4'>
+                    <MetaData title="Home page is working" />
 
-                        <Product product={product} />
+                    <div className='container mt-md-5 mb-md-5'>
+
+                        <div className='row'>
+
+                            {
+                                products && products.map((product) => (
+
+                                    <div key={product._id} className='col-md-4'>
+
+                                        <Product product={product} />
+
+                                    </div>
+
+                                ))
+                            }
+
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
-
+            )
+            }
         </>
     )
 }
