@@ -15,13 +15,6 @@ const HomePage = () => {
         (state) => state.products
     );
 
-    const product = {
-        name: "Sadaqah",
-        images: [{ url: "https://najafyia.org/images/sadaqa-banner.jpg" }],
-        price: "50 USD",
-        _id: "sadaqah"
-    }
-
     useEffect(() => {
 
         if (error) {
@@ -47,9 +40,9 @@ const HomePage = () => {
                         <div className='row'>
 
                             {
-                                products && products.map((product, index) => (
+                                products && products.map((product) => (
 
-                                    <div key={index} className='col-md-4'>
+                                    <div key={product._id} className='col-md-4'>
 
                                         <Product product={product} />
 

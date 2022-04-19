@@ -37,7 +37,7 @@ export const getProductDetails = (id) => async (dispatch) => {
         dispatch({
 
             type: product_details_success,
-            payload: data.product
+            payload: data.product,
         });
         
     } catch (error) {
@@ -47,7 +47,7 @@ export const getProductDetails = (id) => async (dispatch) => {
             payload: error.response.data.message
         });
     }
-}
+};
 
 // clearing errors
 export const clearError = () => async (dispatch) => {
