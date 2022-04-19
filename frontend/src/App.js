@@ -5,6 +5,8 @@ import webFont from 'webfontloader';
 import Footer from './components/layouts/footer';
 import Header from './components/layouts/header';
 import HomePage from './pages/home';
+import ProductDetails from './pages/ProductDetails';
+import About from './pages/AboutUs';
 
 export const App = () => {
 
@@ -32,11 +34,13 @@ export const App = () => {
 
         <Routes>
 
-        <Route exact path='/' element={<HomePage />}  />
+        <Route exact path='/' element={<HomePage />} />
+        <Route exact path='/product/:id' element={<ProductDetails />} />
+        <Route exact path='/about' element={<About />} />
 
         </Routes>
         {/* end pages */}
-
+      
         {/* start footer */}
         <Footer />
         {/* start footer */}
