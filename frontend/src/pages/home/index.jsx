@@ -3,7 +3,7 @@ import Product from '../../components/layouts/product';
 import MetaData from '../../components/layouts/helmet';
 import './index.css';
 import { useSelector, useDispatch } from "react-redux";
-import { getProduct } from '../../actions/product/productAction';
+import { clearErrors, getProduct } from '../../actions/product/productAction';
 import Loader from '../../components/layouts/loader';
 import { useAlert } from 'react-alert';
 
@@ -18,7 +18,8 @@ const HomePage = () => {
     useEffect(() => {
 
         if (error) {
-            return alert.error(error);
+            alert.error(error);
+            dispatch(clearErrors());
         }
 
         dispatch(getProduct());

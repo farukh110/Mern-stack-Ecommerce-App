@@ -5,8 +5,8 @@ import webFont from 'webfontloader';
 import Footer from './components/layouts/footer';
 import Header from './components/layouts/header';
 import HomePage from './pages/home';
-import ProductDetails from './pages/ProductDetails';
 import About from './pages/AboutUs';
+import ProductDetails from './pages/ProductDetails';
 
 export const App = () => {
 
