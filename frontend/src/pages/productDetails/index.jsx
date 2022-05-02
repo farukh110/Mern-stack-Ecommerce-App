@@ -2,15 +2,12 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Carousel } from 'react-bootstrap';
 import { clearErrors, getProductDetails } from '../../actions/product/productAction';
-import { useParams } from 'react-router-dom';
 import ReactStars from 'react-rating-stars-component';
 import ReviewCard from '../../components/controls/ReviewCard';
 import Loader from './../../components/layouts/loader';
 import { useAlert } from 'react-alert';
 
-const ProductDetails = () => {
-
-    let { id } = useParams();
+const ProductDetails = ({ match }) => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -26,7 +23,7 @@ const ProductDetails = () => {
         isHalf: true
     };
 
-    console.log('match?.params?.id', id);
+    console.log('match?.params?.id', match.params.id);
 
     useEffect(() => {
 
@@ -35,10 +32,10 @@ const ProductDetails = () => {
             dispatch(clearErrors());
         }
 
-        console.log("Before Match", id);
-        dispatch(getProductDetails(id));
+        console.log("Before Match", match.params.id);
+        dispatch(getProductDetails(match.params.id));
 
-    }, [dispatch, id]);
+    }, [dispatch, match.params.id]);
 
     return (
         <>
