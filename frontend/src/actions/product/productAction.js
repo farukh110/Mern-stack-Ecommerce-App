@@ -1,14 +1,18 @@
 import axios from "axios";
-import { all_product_request, all_product_success, all_product_fail, product_details_request, product_details_success, product_details_fail, clear_errors  } from "./../../appConstants/products/productsConstants";
+import { all_product_request, all_product_success, all_product_fail, 
+         product_details_request, product_details_success, product_details_fail, 
+         clear_errors  } from "./../../appConstants/products/productsConstants";
 
 // get products
-export const getProduct = () => async (dispatch) => {
+export const getProduct = (keyword="", currentPage = 1) => async (dispatch) => {
 
     try {
 
         dispatch({ type: all_product_request });
 
-        const { data } = await axios.get("/api/v1/products");
+        let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}`;
+
+        const { data } = await axios.get(link);
 
         dispatch({
 
@@ -34,6 +38,8 @@ export const getProductDetails = (id) => async (dispatch) => {
 
         const { data } = await axios.get(`/api/v1/product/${id}`);
 
+        console.log(data,"DATATAT");
+
         dispatch({
 
             type: product_details_success,
@@ -44,13 +50,13 @@ export const getProductDetails = (id) => async (dispatch) => {
         
         dispatch({
             type: product_details_fail,
-            payload: error.response.data.message
+            payload: error.response.data.message,
         });
     }
 };
 
 // clearing errors
-export const clearError = () => async (dispatch) => {
+export const clearErrors = () => async (dispatch) => {
 
     dispatch({ type: clear_errors });
-}
+};

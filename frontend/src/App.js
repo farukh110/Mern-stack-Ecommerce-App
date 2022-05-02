@@ -1,12 +1,14 @@
 import './App.css';
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import webFont from 'webfontloader';
 import Footer from './components/layouts/footer';
 import Header from './components/layouts/header';
 import HomePage from './pages/home';
-import ProductDetails from './pages/ProductDetails';
 import About from './pages/AboutUs';
+import ProductDetails from './pages/ProductDetails';
+import ProductPage from './pages/Products';
+import SearchBar from './components/controls/Search/index';
 
 export const App = () => {
 
@@ -24,7 +26,7 @@ export const App = () => {
 
   return (
     <>
-      <BrowserRouter>
+      <Router>
         
         {/* start header */}
         <Header />
@@ -32,19 +34,21 @@ export const App = () => {
         
         {/* start pages */}
 
-        <Routes>
+         <Switch>
+            <Route exact path='/' component={HomePage} />
+            <Route exact path='/product/:id' component={ProductDetails} />
+            <Route exact path='/about' component={About} />
+            <Route exact path='/products' component={ProductPage} />
+            <Route path='/products/:keyword' component={ProductPage} />
+            <Route exact path='/search' component={SearchBar} />
+        </Switch>
 
-        <Route exact path='/' element={<HomePage />} />
-        <Route exact path='/product/:id' element={<ProductDetails />} />
-        <Route exact path='/about' element={<About />} />
-
-        </Routes>
         {/* end pages */}
       
         {/* start footer */}
         <Footer />
         {/* start footer */}
-      </BrowserRouter>
+      </Router>
     </>
   )
 }
