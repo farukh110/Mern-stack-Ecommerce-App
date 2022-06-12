@@ -6,12 +6,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, getProduct } from '../../actions/product/productAction';
 import Loader from '../../components/layouts/loader';
 import { useAlert } from 'react-alert';
+import Statement from './components/contact/statement';
 
 const HomePage = () => {
 
     const alert = useAlert();
     const dispatch = useDispatch();
-    const { loading, error, products, productsCount } = useSelector(
+    const { loading, error, products } = useSelector(
         (state) => state.products
     );
 
@@ -60,6 +61,8 @@ const HomePage = () => {
 
             )
             }
+
+            <Statement />
         </>
     )
 }

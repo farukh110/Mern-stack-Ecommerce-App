@@ -6,6 +6,7 @@ import ReactStars from 'react-rating-stars-component';
 import ReviewCard from '../../components/controls/ReviewCard';
 import Loader from './../../components/layouts/loader';
 import { useAlert } from 'react-alert';
+import MetaData from '../../components/layouts/helmet';
 
 const ProductDetails = ({ match }) => {
 
@@ -44,6 +45,8 @@ const ProductDetails = ({ match }) => {
                 loading ? <Loader /> : (
 
                     <div className='container mt-md-5 mb-md-5'>
+
+                        <MetaData title={`${product.name}`} />
 
                         <h1 className='mb-md-3'>Product details</h1>
 
