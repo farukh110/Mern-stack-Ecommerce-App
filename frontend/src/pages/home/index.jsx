@@ -7,6 +7,7 @@ import { clearErrors, getProduct } from '../../actions/product/productAction';
 import Loader from '../../components/layouts/loader';
 import { useAlert } from 'react-alert';
 import Statement from './components/contact/statement';
+import HomeSlider from './components/slider';
 
 const HomePage = () => {
 
@@ -30,6 +31,8 @@ const HomePage = () => {
 
     return (
         <>
+
+            <HomeSlider />
 
             {loading ? <Loader /> : (
 
