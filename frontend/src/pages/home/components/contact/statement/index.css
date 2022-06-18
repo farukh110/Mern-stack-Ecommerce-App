@@ -1,0 +1,27 @@
+.statement {
+    overflow: hidden;
+    background: #280739;
+}
+
+.statement h1 {
+    font-size: 45px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.statement p {
+    color: #ffffff;
+}
+
+.btn-action {
+
+    font-size: 22px;
+    border: 1.5px solid #ffffff;
+    background: transparent;
+}
+
+.btn-action:hover {
+    background: #ffffff;
+    border: 1.5px solid #ffffff;
+    color: #280739;
+}
