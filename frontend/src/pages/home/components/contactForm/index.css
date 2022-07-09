@@ -1,0 +1,95 @@
+.contact-form {
+    overflow: hidden;
+    background: #280739;
+}
+
+.contact-form h1 {
+    font-size: 45px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.contact-form p {
+    color: #ffffff;
+}
+
+.btn-action {
+
+    font-size: 22px;
+    border: 1.5px solid #ffffff;
+    background: transparent;
+}
+
+.btn-action:hover {
+    background: #ffffff;
+    border: 1.5px solid #ffffff;
+    color: #280739;
+}
+
+iframe {
+    width: 100%;
+    border: 0;
+}
+
+.main-form input {
+
+    background: transparent;
+    border: 2px solid #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main-form input:focus {
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.main-form input::placeholder {
+    color: #ffffff;
+}
+
+.main-form select {
+
+    background: transparent;
+    border: 2px solid #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main-form select:focus,
+.main-form select:focus-visible {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.main-form select option {
+
+    background: #280739 !important;
+    color: #ffffff;
+}
+
+.main-form select {
+    color: #ffffff;
+}
+
+.main-form textarea {
+
+    background: transparent;
+    border: 2px solid #ffffff;
+    height: 175px;
+    resize: none;
+}
+
+.main-form textarea:focus {
+
+    background: transparent;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+.main-form textarea::placeholder {
+
+    color: #ffffff;
+}

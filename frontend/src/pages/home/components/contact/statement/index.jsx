@@ -8,7 +8,7 @@ const Statement = () => {
 
             <div className='row'>
 
-                <div className='col-md-6'>
+                <div className='col-md-6 p-0'>
 
                     <img className='img-fluid' src={img} alt="" />
 
