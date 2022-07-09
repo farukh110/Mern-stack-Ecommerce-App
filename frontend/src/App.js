@@ -9,6 +9,7 @@ import About from './pages/AboutUs';
 import ProductDetails from './pages/ProductDetails';
 import ProductPage from './pages/Products';
 import SearchBar from './components/controls/Search/index';
+import LoginRegister from './pages/Users';
 
 export const App = () => {
 
@@ -41,6 +42,7 @@ export const App = () => {
             <Route exact path='/products' component={ProductPage} />
             <Route path='/products/:keyword' component={ProductPage} />
             <Route exact path='/search' component={SearchBar} />
+            <Route exact path='/login' component={LoginRegister} />
         </Switch>
 
         {/* end pages */}

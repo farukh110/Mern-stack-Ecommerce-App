@@ -8,6 +8,8 @@ import Loader from '../../components/layouts/loader';
 import { useAlert } from 'react-alert';
 import Statement from './components/contact/statement';
 import HomeSlider from './components/slider';
+import OtherWays from './components/otherWays';
+import ContactForm from './components/contactForm';
 
 const HomePage = () => {
 
@@ -66,6 +68,8 @@ const HomePage = () => {
             }
 
             <Statement />
+            <ContactForm />
+            <OtherWays />
         </>
     )
 }
