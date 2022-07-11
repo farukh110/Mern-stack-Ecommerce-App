@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './index.css';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
+import login from '../../assets/images/login.jpg';
 
 const LoginRegister = () => {
 
@@ -63,103 +64,184 @@ const LoginRegister = () => {
 
     return (
         <>
-            <div>
-                <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example" className="mb-3">
 
-                    <Tab eventKey="Login" title="Login">
+            <div className='banner'>
 
-                        <form
-                            className='login-form'
-                            onSubmit={loginSubmit}>
+                <img className='img-fluid w-100' src={login} alt='' />
 
-                            <input
-                                className='form-control'
-                                type='email'
-                                placeholder='enter your email'
-                                required
-                                value={loginEmail}
-                                onChange={(e) => setLoginEmail(e.target.value)}
-                            />
+            </div>
 
-                            <input
-                                className='form-control'
-                                type='password'
-                                placeholder='enter your password'
-                                required
-                                value={loginPassword}
-                                onChange={(e) => setLoginPassword(e.target.value)}
-                            />
+            <div className='container'>
 
-                            <input
-                                type='submit'
-                                value='Login'
-                                className='btn btn-primary'
-                            />
+                <div className='row justify-content-center mt-md-5 mb-md-5'>
 
-                            <Link to='/password/forget'> Forget Password </Link>
+                    <div className='col-md-6 login-wrapper pt-md-5 pb-md-5'>
 
-                        </form>
+                        <Tabs defaultActiveKey="Login" id="uncontrolled-tab-example" className="mb-3">
 
-                    </Tab>
-                    <Tab eventKey="Signup" title="Sign Up">
+                            <Tab eventKey="Login" title="Login">
 
-                        <form className='signup-form'
-                            encType='multipart/form-data'
-                            onSubmit={registerSubmit}
-                        >
+                                <form
+                                    className='login-form'
+                                    onSubmit={loginSubmit}>
 
-                            <input
-                                type='text'
-                                placeholder='Name'
-                                required
-                                name='name'
-                                value={name}
-                                onChange={registerDataChange}
-                            />
+                                    <div className='row'>
 
-                            <input
-                                type='email'
-                                placeholder='Email'
-                                required
-                                name='email'
-                                value={email}
-                                onChange={registerDataChange}
-                            />
+                                        <div className='col-md-12 mt-md-3'>
 
-                            <input
-                                type='password'
-                                placeholder='Password'
-                                required
-                                name='password'
-                                value={password}
-                                onChange={registerDataChange}
-                            />
+                                            <input
+                                                className='form-control'
+                                                type='email'
+                                                placeholder='enter your email'
+                                                required
+                                                value={loginEmail}
+                                                onChange={(e) => setLoginEmail(e.target.value)}
+                                            />
 
-                            <div id="registerImage">
 
-                                <img src={avatarPreview} alt="Avatar Preview" />
+                                        </div>
 
-                                <input
-                                    type='file'
-                                    name='avatar'
-                                    accept='image/*'
-                                    onChange={registerDataChange}
-                                />
+                                        <div className='col-md-12 mt-md-3'>
 
-                            </div>
+                                            <input
+                                                className='form-control'
+                                                type='password'
+                                                placeholder='enter your password'
+                                                required
+                                                value={loginPassword}
+                                                onChange={(e) => setLoginPassword(e.target.value)}
+                                            />
 
-                            <input
-                                type='submit'
-                                value='Sign Up'
-                                className='btn btn-primary'
-                            // disabled={loading ? true : false}
-                            />
+                                        </div>
 
-                        </form>
+                                        <div className='col-md-5 mt-md-3'>
 
-                    </Tab>
+                                            <input
+                                                type='submit'
+                                                value='Login'
+                                                className='btn btn-primary text-uppercase btn-action btn-block w-100'
+                                            />
 
-                </Tabs>
+                                        </div>
+
+                                        <div className='col-md-7 mt-md-4'>
+
+                                            <Link to='/password/forget'> Forget Password </Link>
+
+                                        </div>
+
+                                    </div>
+
+                                </form>
+
+                            </Tab>
+                            <Tab eventKey="Signup" title="Sign Up">
+
+                                <form className='signup-form'
+                                    encType='multipart/form-data'
+                                    onSubmit={registerSubmit}
+                                >
+
+                                    <div className='row justify-content-center'>
+
+                                        <div className='col-md-12 mt-md-3'>
+
+                                            <input
+                                                type='text'
+                                                placeholder='Name'
+                                                className='form-control'
+                                                required
+                                                name='name'
+                                                value={name}
+                                                onChange={registerDataChange}
+                                            />
+
+                                        </div>
+
+                                        <div className='col-md-12 mt-md-3'>
+                                            <input
+                                                type='email'
+                                                placeholder='Email'
+                                                className='form-control'
+                                                required
+                                                name='email'
+                                                value={email}
+                                                onChange={registerDataChange}
+                                            />
+
+                                        </div>
+
+                                        <div className='col-md-12 mt-md-3'>
+
+                                            <input
+                                                type='password'
+                                                placeholder='Password'
+                                                className='form-control'
+                                                required
+                                                name='password'
+                                                value={password}
+                                                onChange={registerDataChange}
+                                            />
+
+                                        </div>
+
+                                        <div className='col-md-12 mt-md-3'>
+
+                                            <div id="registerImage">
+
+                                                <div className='row'>
+
+                                                    <div className='col-md-6'>
+
+                                                        <div class="upload-btn-wrapper">
+
+                                                            <button class="btn btn-primary text-uppercase btn-action btn-block w-100">Upload a Photo</button>
+                                                            <input
+                                                                type='file'
+                                                                name='avatar'
+                                                                className='form-control file-upload'
+                                                                accept='image/*'
+                                                                onChange={registerDataChange}
+                                                            />
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div className='col-md-6'>
+
+                                                        <img className='img-fluid' src={avatarPreview} alt="Avatar Preview" />
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div className='col-md-4 mt-md-3'>
+
+                                            <input
+                                                type='submit'
+                                                value='Sign Up'
+                                                className='btn btn-primary text-uppercase btn-action btn-block w-100'
+                                            // disabled={loading ? true : false}
+                                            />
+
+                                        </div>
+
+                                    </div>
+
+
+                                </form>
+
+                            </Tab>
+
+                        </Tabs>
+                    </div>
+
+                </div>
+
             </div>
         </>
     )
