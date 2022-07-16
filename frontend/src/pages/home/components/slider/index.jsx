@@ -35,7 +35,7 @@ const HomeSlider = () => {
                     <div className='image-container'>
 
                         <img src={orphan} alt="" />
-                        <div class="text-block">
+                        <div className="text-block">
                             <h4>The orphan sponsorship program is one of the most important programs run by the foundation</h4>
                         </div>
 
@@ -49,7 +49,7 @@ const HomeSlider = () => {
 
                         <img src={khums} alt="" />
 
-                        <div class="text-block">
+                        <div className="text-block">
                             <h4>Fulfill your Khums obligation with ease</h4>
                         </div>
 
@@ -63,7 +63,7 @@ const HomeSlider = () => {
 
                         <img src={zari} alt="" />
 
-                        <div class="text-block">
+                        <div className="text-block">
                             <h4>Register now for Ziyarah of Imam Hussein (as) on Thursday night</h4>
                         </div>
 
@@ -77,7 +77,7 @@ const HomeSlider = () => {
 
                         <img src={sadaqah} alt="" />
 
-                        <div class="text-block">
+                        <div className="text-block">
                             <h4>Sadaqah every day on your behalf at your sunrise and your sunset!</h4>
                         </div>
 
