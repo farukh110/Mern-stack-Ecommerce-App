@@ -1,0 +1,37 @@
+.user-profile img {
+
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: table;
+}
+
+.admin_container {
+    border: 2px solid #18307F;
+    transition: ease-in-out 0.5s;
+    text-align: center;
+}
+
+.admin_container {
+    text-decoration: none;
+    color: #18307F;
+}
+
+.admin_container .admin_icon {
+    font-size: 60px;
+    color: #18307F;
+}
+
+.admin_container:hover {
+    border: 2px solid #18307F;
+    background: #18307F;
+    cursor: pointer;
+    box-shadow: 0px 16px 35px 14px rgb(0 0 0 / 15%);
+}
+
+.admin_container:hover,
+.admin_container:hover .admin_icon {
+    color: #fff;
+}

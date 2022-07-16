@@ -18,7 +18,7 @@ const OtherWays = () => {
                             <div className='donate-box text-center pt-md-5 pl-md-5 pr-md-5 pb-md-4'>
 
                                 <div className='icon-wrapper pt-md-4'>
-                                    <i class="fa fa-money"></i>
+                                    <i className="fa fa-money"></i>
                                 </div>
 
                                 <h4 className='text-uppercase mt-md-3'> SADAQA </h4>
@@ -39,7 +39,7 @@ const OtherWays = () => {
                             <div className='donate-box text-center pt-md-5 pl-md-5 pr-md-5 pb-md-4'>
 
                                 <div className='icon-wrapper pt-md-4'>
-                                    <i class="fa fa-pagelines"></i>
+                                    <i className="fa fa-pagelines"></i>
                                 </div>
 
                                 <h4 className='text-uppercase mt-md-3'> Khums </h4>
@@ -61,7 +61,7 @@ const OtherWays = () => {
                             <div className='donate-box text-center pt-md-5 pl-md-5 pr-md-5 pb-md-4'>
 
                                 <div className='icon-wrapper pt-md-4'>
-                                    <i class="fa fa-mobile"></i>
+                                    <i className="fa fa-mobile"></i>
                                 </div>
 
                                 <h4 className='text-uppercase mt-md-3'> Support </h4>
