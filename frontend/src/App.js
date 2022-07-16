@@ -14,6 +14,7 @@ import store from "./store/store";
 import { loadUser } from './actions/user/userAction';
 import { useSelector } from 'react-redux';
 import UserOptions from './components/layouts/header/components';
+import Profile from './pages/Users/components/Profile';
 
 export const App = () => {
 
@@ -52,6 +53,8 @@ export const App = () => {
             <Route path='/products/:keyword' component={ProductPage} />
             <Route exact path='/search' component={SearchBar} />
             <Route exact path='/login' component={LoginRegister} />
+            <Route exact path='/account' component={Profile} />
+
         {/* </Switch> */}
 
         {/* end pages */}
