@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo/logo.png';
 import './index.css';
 
@@ -11,14 +12,16 @@ const Header = () => {
             <Navbar className='custom-navigation' collapseOnSelect expand="lg" bg="light" variant="light">
 
                 <Container>
-                    <Navbar.Brand href="!#">
-                        <img src={logo} className="logo" alt='logo' />
+                    <Navbar.Brand>
+                        <Link to='/'>
+                            <img src={logo} className="logo" alt='logo' />
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse className='custom-menu' id="responsive-navbar-nav">
                         <Nav className="me-auto">
 
-                            <Nav.Link href="!#"> Home </Nav.Link>
+                            <Nav.Link> <Link to='/'> Home </Link> </Nav.Link>
                             <Nav.Link href="!#"> Programs </Nav.Link>
 
                             <NavDropdown title="Projects" id="collasible-nav-dropdown">
@@ -49,8 +52,7 @@ const Header = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets"> Add to Cart </Nav.Link>
-
+                            <Link to='/login'> Login / Register </Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -87,8 +87,8 @@ const ContactForm = () => {
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12773.421871754306!2d44.319714841321684!3d32.00855565640403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x155ed7d19dc9d04f%3A0xf59db4b4017dd8e7!2z2LPYqtin2KbYsSDYp9mE2YPZgdmK2LTZig!5e0!3m2!1sen!2s!4v1657299361967!5m2!1sen!2s"
                         height="664"
                         title="Najafyia"
-                        allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        loading="lazy"
+                    >
 
                     </iframe>
 
