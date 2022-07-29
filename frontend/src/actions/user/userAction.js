@@ -1,6 +1,7 @@
 import { login_request, login_success, login_fail, register_user_request, 
     register_user_success, register_user_fail, clear_errors, 
-    load_user_request, load_user_success, load_user_fail, logout_success, logout_fail } from "../../appConstants/user/userConstants";
+    load_user_request, load_user_success, load_user_fail, logout_success, logout_fail,
+update_profile_request, update_profile_success, update_profile_fail } from "../../appConstants/user/userConstants";
 import axios from 'axios';
 
 // login
@@ -83,6 +84,27 @@ export const logout = () => async (dispatch) => {
         dispatch({ type: logout_fail, payload: error.response.data.message });
     }
 }
+
+// update profile
+
+export const updateProfile = (userData) => async (dispatch) => {
+
+    try {
+        
+        dispatch({ type: update_profile_request });
+
+        const config = { headers: { "Content-Type": "multipart/form-data" }};
+
+        const { data } = await axios.put(`/api/v1/me/update`, userData, config);
+
+        dispatch({ type: update_profile_success, payload: data.success });    
+
+    } catch (error) {
+
+        dispatch({ type: update_profile_fail, payload: error.response.data.message });
+        
+    }
+};
 
 // clearing errors
 export const clearErrors = () => async (dispatch) => {

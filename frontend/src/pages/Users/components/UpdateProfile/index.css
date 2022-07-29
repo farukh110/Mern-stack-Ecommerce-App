@@ -1,0 +1,73 @@
+.update-profile-wrapper {
+
+    background: #280739;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    box-shadow: 0 4px 10px #00000029;
+}
+
+.update-profile-form input {
+
+    background: transparent;
+    border: 2px solid #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #fff;
+}
+
+.update-profile-form input:focus,
+.update-profile-form input:focus-visible {
+
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+}
+
+.update-profile-form input::placeholder {
+
+    color: #ffffff;
+}
+
+.update-profile-form .btn-action {
+
+    font-size: 22px;
+    border: 2px solid #ffffff;
+    background: transparent;
+}
+
+.update-profile-form .btn-action:hover {
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    color: #280739;
+}
+
+.update-profile-form img {
+
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    display: table;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.file-upload {
+
+    color: #ffffff;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
