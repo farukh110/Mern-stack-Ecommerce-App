@@ -216,7 +216,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
     
         const imageId = user.avatar.public_id;
 
-        await cloudinary.v2.uploader.distroy(imageId);
+        await cloudinary.v2.uploader.destroy(imageId);
 
         const myCloud = await cloudinary.v2.uploader.upload(req.body.avatar, {
 

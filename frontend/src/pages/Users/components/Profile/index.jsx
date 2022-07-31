@@ -27,13 +27,13 @@ const Profile = ({ history }) => {
 
                     <div className='row justify-content-center'>
 
-                        <div className='col-md-7 profile-container text-white p-4'>
+                        <div className='col-md-10 profile-container text-white p-4'>
 
                             <div className='profile-content'>
 
                                 <div className='row'>
 
-                                    <div className='col-md-4 text-center'>
+                                    <div className='col-md-3 text-center'>
 
                                         <h3> My Profile </h3>
 
@@ -41,7 +41,7 @@ const Profile = ({ history }) => {
 
                                     </div>
 
-                                    <div className='col-md-8'>
+                                    <div className='col-md-9'>
 
                                         <div className='row'>
 
