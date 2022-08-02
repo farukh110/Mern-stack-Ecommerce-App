@@ -17,6 +17,7 @@ import UserOptions from './components/layouts/header/components';
 import Profile from './pages/Users/components/Profile';
 import ProtectedRoute from './components/Route/ProtectedRoute';
 import UpdateProfile from './pages/Users/components/UpdateProfile';
+import UpdatePassword from './pages/Users/components/UpdatePassword';
 
 export const App = () => {
 
@@ -57,6 +58,7 @@ export const App = () => {
             <Route exact path='/login' component={LoginRegister} />
             <ProtectedRoute exact path='/account' component={Profile} />
             <ProtectedRoute exact path='/me/update' component={UpdateProfile} />
+            <ProtectedRoute exact path='/password/update' component={UpdatePassword} />
 
         {/* </Switch> */}
 
