@@ -156,7 +156,7 @@ const LoginRegister = ({ history }) => {
 
                                                 <div className='col-md-7 mt-md-4'>
 
-                                                    <Link to='/password/forget'> Forget Password </Link>
+                                                    <Link to='/password/forgot'> Forget Password </Link>
 
                                                 </div>
 
