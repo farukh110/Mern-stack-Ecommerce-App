@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Carousel } from 'react-bootstrap';
 import { clearErrors, getProductDetails } from '../../actions/product/productAction';
@@ -7,6 +7,7 @@ import ReviewCard from '../../components/controls/ReviewCard';
 import Loader from './../../components/layouts/loader';
 import { useAlert } from 'react-alert';
 import MetaData from '../../components/layouts/helmet';
+import { addItemsToCart } from '../../actions/Cart/cartAction';
 
 const ProductDetails = ({ match }) => {
 
@@ -24,7 +25,31 @@ const ProductDetails = ({ match }) => {
         isHalf: true
     };
 
-    console.log('match?.params?.id', match.params.id);
+    // console.log('match?.params?.id', match.params.id);
+
+    const [quantity, setQuantity] = useState(1);
+
+    const increaseQuantity = () => {
+
+        if (product.Stock <= quantity) return;
+
+        const qty = quantity + 1;
+        setQuantity(qty);
+    }
+
+    const decreaseQuantity = () => {
+
+        if (1 >= quantity) return;
+
+        const qty = quantity - 1;
+        setQuantity(qty);
+    }
+
+    const addToCartHandler = () => {
+
+        dispatch(addItemsToCart(match.params.id, quantity));
+        alert.success("Item Added to Cart");
+    }
 
     useEffect(() => {
 
@@ -33,7 +58,7 @@ const ProductDetails = ({ match }) => {
             dispatch(clearErrors());
         }
 
-        console.log("Before Match", match.params.id);
+        // console.log("Before Match", match.params.id);
         dispatch(getProductDetails(match.params.id));
 
     }, [dispatch, match.params.id]);
@@ -108,7 +133,7 @@ const ProductDetails = ({ match }) => {
 
                                         <div className='d-grid'>
 
-                                            <button className='btn btn-primary'>
+                                            <button className='btn btn-primary' onClick={decreaseQuantity}>
                                                 -
                                             </button>
 
@@ -117,14 +142,14 @@ const ProductDetails = ({ match }) => {
 
                                     <div className='col-md-3'>
 
-                                        <input className='form-control' type="number" />
+                                        <input className='form-control' readOnly type="number" value={quantity} />
 
                                     </div>
 
                                     <div className='col-md-1'>
 
                                         <div className='d-grid'>
-                                            <button className='btn btn-primary'>
+                                            <button className='btn btn-primary' onClick={increaseQuantity}>
                                                 +
                                             </button>
                                         </div>
@@ -138,7 +163,7 @@ const ProductDetails = ({ match }) => {
                                     <div className='col-md-3'>
 
                                         <div className='d-grid'>
-                                            <button className='btn btn-success'> Add to Cart </button>
+                                            <button className='btn btn-success' onClick={addToCartHandler}> Add to Cart </button>
                                         </div>
 
                                     </div>

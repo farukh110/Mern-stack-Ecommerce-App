@@ -3,13 +3,15 @@ import { useHistory } from 'react-router-dom';
 import './index.css';
 import { useAlert } from 'react-alert';
 import { logout } from '../../../../actions/user/userAction';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const UserOptions = ({ user }) => {
 
     const history = useHistory();
     const alert = useAlert();
     const dispatch = useDispatch();
+
+    const { cartItems } = useSelector((state) => state.cart);
 
     const orders = () => {
 
@@ -32,10 +34,15 @@ const UserOptions = ({ user }) => {
         history.push("/dashboard");
     }
 
+    const cart = () => {
+
+        history.push("/cart");
+    }
 
     const options = [
         { iconClass: 'fa fa-first-order', name: 'Orders', func: orders },
         { iconClass: 'fa fa-user-circle-o', name: 'Profile', func: account },
+        { iconClass: 'fa fa-shopping-cart', name: `Cart(${cartItems.length})`, func: cart },
         { iconClass: 'fa fa-sign-out', name: 'Logout', func: logoutUser }
     ];
 

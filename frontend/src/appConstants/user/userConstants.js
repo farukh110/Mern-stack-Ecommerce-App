@@ -13,4 +13,22 @@ export const load_user_fail = "load_user_fail";
 export const logout_success = "logout_success";
 export const logout_fail = "logout_fail";
 
+export const update_profile_request = "update_profile_request";
+export const update_profile_success = "update_profile_success";
+export const update_profile_reset = "update_profile_reset";
+export const update_profile_fail = "update_profile_fail";
+
+export const update_password_request = "update_password_request";
+export const update_password_success = "update_password_success";
+export const update_password_reset = "update_password_reset";
+export const update_password_fail = "update_password_fail";
+
+export const forgot_password_request = "forgot_password_request";
+export const forgot_password_success = "forgot_password_success";
+export const forgot_password_fail = "forgot_password_fail";
+
+export const reset_password_request = "reset_password_request";
+export const reset_password_success = "reset_password_success";
+export const reset_password_fail = "reset_password_fail";
+
 export const clear_errors = "clear_errors";

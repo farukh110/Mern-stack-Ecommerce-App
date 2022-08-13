@@ -15,6 +15,12 @@ import { loadUser } from './actions/user/userAction';
 import { useSelector } from 'react-redux';
 import UserOptions from './components/layouts/header/components';
 import Profile from './pages/Users/components/Profile';
+import ProtectedRoute from './components/Route/ProtectedRoute';
+import UpdateProfile from './pages/Users/components/UpdateProfile';
+import UpdatePassword from './pages/Users/components/UpdatePassword';
+import ForgotPassword from './pages/Users/components/ForgotPassword';
+import ResetPassword from './pages/Users/components/ResetPassword';
+import Cart from './pages/Cart';
 
 export const App = () => {
 
@@ -53,7 +59,12 @@ export const App = () => {
             <Route path='/products/:keyword' component={ProductPage} />
             <Route exact path='/search' component={SearchBar} />
             <Route exact path='/login' component={LoginRegister} />
-            <Route exact path='/account' component={Profile} />
+            <ProtectedRoute exact path='/account' component={Profile} />
+            <ProtectedRoute exact path='/me/update' component={UpdateProfile} />
+            <ProtectedRoute exact path='/password/update' component={UpdatePassword} />
+            <Route exact path='/password/forgot' component={ForgotPassword} />
+            <Route exact path='/password/reset/:token' component={ResetPassword} />
+            <Route exact path='/cart' component={Cart} />
 
         {/* </Switch> */}
 

@@ -1,6 +1,11 @@
 import { login_request, login_success, login_fail, register_user_request, register_user_success, register_user_fail, 
-    clear_errors, load_user_request, load_user_success, load_user_fail, logout_success, logout_fail } from "../../appConstants/user/userConstants";
-
+    clear_errors, load_user_request, load_user_success, load_user_fail, logout_success, logout_fail,
+update_profile_request, update_profile_success, update_profile_reset, update_profile_fail, update_password_request, 
+update_password_success, update_password_reset, update_password_fail, forgot_password_request, forgot_password_success, 
+forgot_password_fail, 
+reset_password_request,
+reset_password_fail,
+reset_password_success} from "../../appConstants/user/userConstants";
 
 export const userReducer = (state = { user: {} }, action) => {
 
@@ -54,6 +59,96 @@ export const userReducer = (state = { user: {} }, action) => {
                 user: null,
                 error: action.payload
             }
+        case clear_errors:
+            return {
+                ...state,
+                error: null
+            } 
+    
+        default:
+            return state;
+    }
+}
+
+export const profileReducer = (state = { }, action) => {
+
+    switch (action.type) {
+        
+        case update_profile_request:
+        case update_password_request:
+            return {
+                ...state,
+                loading: true,
+            };
+            
+        case update_profile_success: 
+        case update_password_success:
+            return {
+                ...state,
+                loading: false,
+                isUpdated: action.payload,
+            };
+    
+        case update_profile_fail: 
+        case update_password_fail:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            };
+        
+        case update_profile_reset:
+        case update_password_reset:    
+            return {
+                ...state,
+                isUpdated: false,
+            }
+        
+        case clear_errors:
+            return {
+                ...state,
+                error: null
+            } 
+    
+        default:
+            return state;
+    }
+}
+
+export const forgotPasswordReducer = (state = {}, action) => {
+
+    switch (action.type) {
+        
+        case forgot_password_request:
+            case reset_password_request:
+            return {
+                ...state,
+                loading: true,
+                error: null
+            };
+            
+        case forgot_password_success:
+            return {
+                ...state,
+                loading: false,
+                message: action.payload,
+            };
+    
+        case reset_password_success:
+            return {
+                ...state,
+                loading: false,
+                success: action.payload,
+            };
+    
+        case forgot_password_fail:
+            case reset_password_fail:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            };
+        
         case clear_errors:
             return {
                 ...state,

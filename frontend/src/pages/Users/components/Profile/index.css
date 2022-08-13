@@ -1,0 +1,19 @@
+.profile-container {
+
+    background: #280739;
+}
+
+.profile-content a {
+    color: #9ca6c8;
+    text-decoration: none;
+}
+
+.profile-content img {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    display: table;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 5px solid #fff;
+}
