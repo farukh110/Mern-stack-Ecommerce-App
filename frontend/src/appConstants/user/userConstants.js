@@ -23,8 +23,12 @@ export const update_password_success = "update_password_success";
 export const update_password_reset = "update_password_reset";
 export const update_password_fail = "update_password_fail";
 
-export const forget_password_request = "forget_password_request";
-export const forget_password_success = "forget_password_success";
-export const forget_password_fail = "forget_password_fail";
+export const forgot_password_request = "forgot_password_request";
+export const forgot_password_success = "forgot_password_success";
+export const forgot_password_fail = "forgot_password_fail";
+
+export const reset_password_request = "reset_password_request";
+export const reset_password_success = "reset_password_success";
+export const reset_password_fail = "reset_password_fail";
 
 export const clear_errors = "clear_errors";

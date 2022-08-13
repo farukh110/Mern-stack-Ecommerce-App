@@ -1,36 +1,32 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearErrors, updatePassword } from '../../../../actions/user/userAction';
-import { update_password_reset } from '../../../../appConstants/user/userConstants';
+import { clearErrors, resetPassword } from '../../../../actions/user/userAction';
 import Loader from '../../../../components/layouts/loader';
-import './index.css';
+import "./index.css";
 
-const UpdatePassword = ({ history }) => {
+const ResetPassword = ({ history, match }) => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
 
-    const { error, isUpdated, loading } = useSelector((state) => state.profile);
+    const { error, success, loading } = useSelector((state) => state.forgotPassword);
 
-    const [oldPassword, setOldPassword] = useState("");
-    const [newPassword, setNewPassword] = useState("");
+    const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    const updatePasswordSubmit = (e) => {
+    const resetPasswordSubmit = (e) => {
 
         e.preventDefault();
 
         const myForm = new FormData();
 
-        myForm.set("oldPassword", oldPassword);
-        myForm.set("newPassword", newPassword);
+        myForm.set("password", password);
         myForm.set("confirmPassword", confirmPassword);
 
-        console.log("updated password");
+        console.log("reset password");
 
-        dispatch(updatePassword(myForm));
+        dispatch(resetPassword(match.params.token, myForm));
     }
 
     useEffect(() => {
@@ -40,17 +36,14 @@ const UpdatePassword = ({ history }) => {
             dispatch(clearErrors());
         }
 
-        if (isUpdated) {
+        if (success) {
             alert.success("Password Updated Successfully");
 
-            history.push("/account");
-
-            dispatch({
-                type: update_password_reset,
-            });
+            history.push("/login");
         }
 
-    }, [dispatch, error, alert, history, isUpdated]);
+    }, [dispatch, error, alert, history, success]);
+
 
     return (
         <>
@@ -64,7 +57,7 @@ const UpdatePassword = ({ history }) => {
                             <div className="update-profile-wrapper">
 
                                 <form className='update-profile-form'
-                                    onSubmit={updatePasswordSubmit}
+                                    onSubmit={resetPasswordSubmit}
                                 >
 
                                     <div className='row justify-content-center'>
@@ -74,24 +67,10 @@ const UpdatePassword = ({ history }) => {
                                             <input
                                                 className='form-control'
                                                 type='password'
-                                                placeholder='enter your old password'
-                                                required
-                                                value={oldPassword}
-                                                onChange={(e) => setOldPassword(e.target.value)}
-                                            />
-
-
-                                        </div>
-
-                                        <div className='col-md-12 mt-md-3'>
-
-                                            <input
-                                                className='form-control'
-                                                type='password'
                                                 placeholder='enter your new password'
                                                 required
-                                                value={newPassword}
-                                                onChange={(e) => setNewPassword(e.target.value)}
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
                                             />
 
                                         </div>
@@ -137,4 +116,4 @@ const UpdatePassword = ({ history }) => {
     )
 }
 
-export default UpdatePassword;
+export default ResetPassword;

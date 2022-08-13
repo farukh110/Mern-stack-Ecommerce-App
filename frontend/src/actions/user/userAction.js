@@ -2,7 +2,7 @@ import { login_request, login_success, login_fail, register_user_request,
     register_user_success, register_user_fail, clear_errors, 
     load_user_request, load_user_success, load_user_fail, logout_success, logout_fail,
 update_profile_request, update_profile_success, update_profile_fail, update_password_request, 
-update_password_success, update_password_fail } from "../../appConstants/user/userConstants";
+update_password_success, update_password_fail, forgot_password_success, forgot_password_fail, forgot_password_request, reset_password_request, reset_password_success, reset_password_fail } from "../../appConstants/user/userConstants";
 import axios from 'axios';
 
 // login
@@ -125,7 +125,45 @@ export const updatePassword = (passwords) => async (dispatch) => {
         
         dispatch({ type: update_password_fail, payload: error.response.data.message });
     }
-}
+};
+
+// forget password
+export const forgotPassword = (email) => async (dispatch) => {
+
+    try {
+
+        dispatch({ type: forgot_password_request });
+
+        const config = { headers: { "Content-Type": "application/json" }};
+
+        const { data } = await axios.post(`/api/v1/password/forgot`, email, config);
+        
+        dispatch({ type: forgot_password_success, payload: data.message });
+
+    } catch (error) {
+        
+        dispatch({ type: forgot_password_fail, payload: error.response.data.message });
+    }
+};
+
+// reset password
+export const resetPassword = (token, passwords) => async (dispatch) => {
+
+    try {
+
+        dispatch({ type: reset_password_request });
+
+        const config = { headers: { "Content-Type": "application/json" }};
+
+        const { data } = await axios.put(`/api/v1/password/reset/${token}`, passwords, config);
+        
+        dispatch({ type: reset_password_success, payload: data.success });
+
+    } catch (error) {
+        
+        dispatch({ type: reset_password_fail, payload: error.response.data.message });
+    }
+};
 
 // clearing errors
 export const clearErrors = () => async (dispatch) => {

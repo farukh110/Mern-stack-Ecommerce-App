@@ -96,6 +96,8 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
     const resetPasswordUrl = `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`;
 
+    // const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+
     const message = `Your password reset token is :- \n\n ${resetPasswordUrl} \n\n if you have not requested this email then please ignore it`;
 
     try {
@@ -242,7 +244,7 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
     res.status(200).json({
 
         success: true,
-        user
+        // user
     });
 });
 
@@ -250,12 +252,12 @@ exports.updateProfile = catchAsyncErrors(async (req, res, next) => {
 
 exports.getAllUsers = catchAsyncErrors( async (req, res, next) => {
 
-    const user = await User.find();
+    const users = await User.find();
 
     res.status(200).json({
         
         success: true,
-        user
+        users
     })
 });
 
@@ -296,6 +298,8 @@ exports.updateUserRole = catchAsyncErrors( async (req, res, next) => {
         runValidators: true,
         useFindAndModify: false,
     });
+
+    console.log("user : ---- ", user);
 
     res.status(200).json({
 

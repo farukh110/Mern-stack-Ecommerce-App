@@ -1,6 +1,11 @@
 import { login_request, login_success, login_fail, register_user_request, register_user_success, register_user_fail, 
     clear_errors, load_user_request, load_user_success, load_user_fail, logout_success, logout_fail,
-update_profile_request, update_profile_success, update_profile_reset, update_profile_fail, update_password_request, update_password_success, update_password_reset, update_password_fail, forget_password_request, forget_password_success, forget_password_fail } from "../../appConstants/user/userConstants";
+update_profile_request, update_profile_success, update_profile_reset, update_profile_fail, update_password_request, 
+update_password_success, update_password_reset, update_password_fail, forgot_password_request, forgot_password_success, 
+forgot_password_fail, 
+reset_password_request,
+reset_password_fail,
+reset_password_success} from "../../appConstants/user/userConstants";
 
 export const userReducer = (state = { user: {} }, action) => {
 
@@ -110,25 +115,34 @@ export const profileReducer = (state = { }, action) => {
     }
 }
 
-export const forgetPasswordReducer = (state = { }, action) => {
+export const forgotPasswordReducer = (state = {}, action) => {
 
     switch (action.type) {
         
-        case forget_password_request:
+        case forgot_password_request:
+            case reset_password_request:
             return {
                 ...state,
                 loading: true,
                 error: null
             };
             
-        case forget_password_success:
+        case forgot_password_success:
             return {
                 ...state,
                 loading: false,
                 message: action.payload,
             };
     
-        case forget_password_fail:
+        case reset_password_success:
+            return {
+                ...state,
+                loading: false,
+                success: action.payload,
+            };
+    
+        case forgot_password_fail:
+            case reset_password_fail:
             return {
                 ...state,
                 loading: false,

@@ -18,6 +18,9 @@ import Profile from './pages/Users/components/Profile';
 import ProtectedRoute from './components/Route/ProtectedRoute';
 import UpdateProfile from './pages/Users/components/UpdateProfile';
 import UpdatePassword from './pages/Users/components/UpdatePassword';
+import ForgotPassword from './pages/Users/components/ForgotPassword';
+import ResetPassword from './pages/Users/components/ResetPassword';
+import Cart from './pages/Cart';
 
 export const App = () => {
 
@@ -59,6 +62,9 @@ export const App = () => {
             <ProtectedRoute exact path='/account' component={Profile} />
             <ProtectedRoute exact path='/me/update' component={UpdateProfile} />
             <ProtectedRoute exact path='/password/update' component={UpdatePassword} />
+            <Route exact path='/password/forgot' component={ForgotPassword} />
+            <Route exact path='/password/reset/:token' component={ResetPassword} />
+            <Route exact path='/cart' component={Cart} />
 
         {/* </Switch> */}
 
