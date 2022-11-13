@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import webFont from 'webfontloader';
 import Footer from './components/layouts/footer';
 import Header from './components/layouts/header';
@@ -34,6 +34,8 @@ export const App = () => {
 
   const [stripeApiKey, setStripeApiKey] = useState("");
 
+  console.log("stripeApiKey ",stripeApiKey);
+    
   const getStripeApiKey = async () => {
 
     const { data } = await axios.get("/api/v1/stripeApiKey");
@@ -67,7 +69,7 @@ export const App = () => {
         
         {/* start pages */}
 
-         <Switch>
+         {/* <Switch> */}
             { isAuthenticated && <UserOptions user={user} /> }
             {
               stripeApiKey && (
@@ -94,7 +96,7 @@ export const App = () => {
             <ProtectedRoute exact path='/shipping' component={Shipping} />
             <ProtectedRoute exact path='/order/confirm' component={ConfirmOrder} />
             
-        </Switch>
+        {/* </Switch> */}
 
         {/* end pages */}
       

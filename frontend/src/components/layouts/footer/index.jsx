@@ -22,14 +22,11 @@ const Footer = () => {
 
                             <div className='content'>
 
-                                <h4 className='text-light text-uppercase text-left'> Contact </h4>
-
-                                <span> Contact Tel: <a href='tel:+9647810513378'> +964 781 051 3378 </a> </span>
+                                <h4 className='text-uppercase text-left'> Contact </h4>
 
                                 <ul className='menu-list mt-md-2 mt-sm-2 mt-3'>
                                     <li><a href="!#">General Enquiries </a></li>
                                     <li><a href="!#">Complaints &amp; Concerns </a></li>
-                                    <li><a href="!#">Media Enquiries</a></li>
                                     <li><a href="!#">Privacy Statement</a></li>
                                 </ul>
 
@@ -40,9 +37,9 @@ const Footer = () => {
                         <div className='col-md-2 mt-md-0 mt-3'>
 
                             <div className='content text-md-left text-left'>
-                                <h4 className='text-light text-uppercase'> Address </h4>
+                                <h4 className='text-uppercase'> Address </h4>
 
-                                <span> Al Quds Behind South Garage Najaf Al Ashraf Republic of Iraq  </span>
+                                <span> B-06, street 1, block 13 Gulistan e Johar karachi </span>
 
                             </div>
                         </div>
@@ -52,7 +49,7 @@ const Footer = () => {
 
                             <div className='content'>
 
-                                <h4 className='text-light text-uppercase'> FOLLOW US </h4>
+                                <h4 className='text-uppercase'> FOLLOW US </h4>
 
                                 <ul className='social-media mt-md-2 mt-sm-2 mt-3'>
 
@@ -77,19 +74,15 @@ const Footer = () => {
 
                         <div className='row'>
 
-                            <div className='col-md-3'>
+                            <div className='col-md-5'>
 
                                 <div className='content'>
 
-                                    <h4 className='text-light text-uppercase'> Projects </h4>
+                                    <h4 className='text-success text-uppercase'> Our Company </h4>
 
-                                    <ul className='menu-list mt-md-2 mt-sm-2 mt-3'>
-                                        <li><a href="!#"> Microfinance </a></li>
-                                        <li><a href="!#"> Higher Education Loan </a></li>
-                                        <li><a href="!#"> Refugees & IDPs </a></li>
-                                        <li><a href="!#"> General Fund </a></li>
-
-                                    </ul>
+                                    <p>
+                                        Gilgit Baltistan Dry Fruit Supplier is a one stop shopping destination for anyone who wishes to purchase from the vale of Gilgit Baltistan. We understand our customers’ requirements and bring authentic, genuine and exquisite products to their doorsteps.
+                                    </p>
 
                                 </div>
 
@@ -99,44 +92,46 @@ const Footer = () => {
 
                                 <div className='content'>
 
-                                    <h4 className='text-light text-uppercase'> Orphans </h4>
+                                    <h4 className='text-success text-uppercase'> Popular Categories </h4>
 
                                     <ul className='menu-list mt-md-2 mt-sm-2 mt-3'>
-                                        <li><a href="!#"> Basic Care </a></li>
-                                        <li><a href="!#">  Dar Al Zahra School </a></li>
+                                        <li><a href="!#"> Category 1 </a></li>
+                                        <li><a href="!#"> Category 2 </a></li>
+                                        <li><a href="!#"> Category 3 </a></li>
+                                        <li><a href="!#"> Category 4 </a></li>
                                     </ul>
 
                                 </div>
 
                             </div>
 
-                            <div className='col-md-3'>
+                            <div className='col-md-2'>
 
                                 <div className='content'>
 
-                                    <h4 className='text-light text-uppercase'> Islamic Payments </h4>
+                                    <h4 className='text-success text-uppercase'> Products </h4>
 
                                     <ul className='menu-list mt-md-2 mt-sm-2 mt-3'>
-                                        <li><a href="!#"> Khums </a></li>
-                                        <li><a href="!#">  Ibadaat For Marhumeen </a></li>
-                                        <li><a href="!#">  Kaffarah/Fidyah </a></li>
-                                        <li><a href="!#">  Qurbani </a></li>
-                                        <li><a href="!#">  Niyaz </a></li>
+                                        <li><a href="!#"> Category 1 </a></li>
+                                        <li><a href="!#"> Category 2 </a></li>
+                                        <li><a href="!#"> Category 3 </a></li>
+                                        <li><a href="!#"> Category 4 </a></li>
                                     </ul>
 
                                 </div>
 
                             </div>
 
-                            <div className='col-md-3'>
+                            <div className='col-md-2'>
 
                                 <div className='content'>
 
-                                    <h4 className='text-light text-uppercase'> Sadaqah </h4>
+                                    <h4 className='text-success text-uppercase'> Quick Links </h4>
 
                                     <ul className='menu-list mt-md-2 mt-sm-2 mt-3'>
-                                        <li><a href="!#"> Sadaqah a Day </a></li>
-                                        <li><a href="!#">  Sadaqah For Holy Personalities </a></li>
+                                        <li><a href="!#"> Category 1 </a></li>
+                                        <li><a href="!#"> Category 2 </a></li>
+
 
                                     </ul>
 
@@ -154,7 +149,7 @@ const Footer = () => {
 
                     <div className='container'>
 
-                        <p> ©  Akhyar Foundation | All Rights Reserved </p>
+                        <p> ©  Ecommerce website | All Rights Reserved </p>
 
                     </div>
 

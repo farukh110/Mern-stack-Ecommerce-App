@@ -4,9 +4,8 @@ import CheckoutSteps from '../Cart/components/CheckoutSteps';
 import './index.css';
 import { CardNumberElement, CardCvcElement, CardExpiryElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { axios } from 'axios';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useAlert } from 'react-alert';
-import { useSelector } from 'react-redux';
 
 const Payment = ({ history }) => {
 

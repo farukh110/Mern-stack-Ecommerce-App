@@ -1,7 +1,6 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { NavLink } from 'react-router-dom/cjs/react-router-dom';
 import logo from '../../../assets/images/logo/logo.png';
 import './index.css';
 
@@ -22,31 +21,9 @@ const Header = () => {
                     <Navbar.Collapse className='custom-menu' id="responsive-navbar-nav">
                         <Nav className="me-auto">
 
-                            <NavLink to='/'> Home </NavLink>
+                            <Nav.Link> <Link to='/'> Home </Link> </Nav.Link>
 
-                            <NavDropdown title="Projects" id="collasible-nav-dropdown">
-
-                                <NavDropdown.Item href="#action/3.1"> Islamic Schools </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2"> Health Care / Medical Camps </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> Higher Education </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> Microfinance </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> Qurbani </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> Ramadhan Food Basket </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> Refugees & IDPs </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> Rice for Arbaeen </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> Sponsor Muharram Azadari </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> Yemen Appeal </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3"> General Fund </NavDropdown.Item>
-
-                            </NavDropdown>
-
-                            <NavDropdown title="Sadaqah" id="collasible-nav-dropdown">
-
-                                <NavDropdown.Item href="#action/3.1"> Sadaqah a Day </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2"> Sadaqah for Holy Personalities </NavDropdown.Item>
-
-                            </NavDropdown>
-
+                            <Nav.Link href="!#"> Products </Nav.Link>
 
                             <Nav.Link href="!#"> Contact Us </Nav.Link>
 

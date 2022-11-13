@@ -1,21 +1,22 @@
 .footer {
-    background: #18307F;
+    background: #F0F2F9;
 }
 
 .footer .logo {
-    height: 60px;
+    height: 100px;
 }
 
 .footer h4 {
     font-size: 16px;
+    color: #F8AD2E;
 }
 
 .footer span {
-    color: #9ca6c8;
+    color: gray;
 }
 
 .footer span a {
-    color: #9ca6c8;
+    color: gray;
     text-decoration: none;
 }
 
@@ -25,7 +26,7 @@
 }
 
 .footer .menu-list li a {
-    color: #fff;
+    color: gray;
     text-decoration: none;
     transition: all 0.5s;
 }
@@ -59,7 +60,7 @@
 .footer .social-media li a {
 
     text-decoration: none;
-    color: #9ca6c8;
+    color: gray;
     font-size: 24px;
     transition: all 0.5s;
 }
@@ -70,11 +71,11 @@
 }
 
 .footer .footer-menu-content {
-    background: #18307F;
+    background: #F0F2F9;
 }
 
 .footer .footer-bottom-bar {
-    background: #112053;
+    background: #1B2F59;
 }
 
 .footer .footer-bottom-bar p {
