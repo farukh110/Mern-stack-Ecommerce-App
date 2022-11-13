@@ -1,5 +1,5 @@
 import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import webFont from 'webfontloader';
 import Footer from './components/layouts/footer';
@@ -21,10 +21,27 @@ import UpdatePassword from './pages/Users/components/UpdatePassword';
 import ForgotPassword from './pages/Users/components/ForgotPassword';
 import ResetPassword from './pages/Users/components/ResetPassword';
 import Cart from './pages/Cart';
+import Shipping from './pages/Cart/components/Shipping';
+import ConfirmOrder from './pages/Cart/components/ConfirmOrder/index';
+import { axios } from 'axios';
+import Payment from './pages/Payment';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 
 export const App = () => {
 
   const { isAuthenticated, user } = useSelector((state) => state.user);
+
+  const [stripeApiKey, setStripeApiKey] = useState("");
+
+  console.log("stripeApiKey ",stripeApiKey);
+    
+  const getStripeApiKey = async () => {
+
+    const { data } = await axios.get("/api/v1/stripeApiKey");
+
+    setStripeApiKey(data.stripeApiKey);
+  }
 
   useEffect(() => {
 
@@ -37,6 +54,8 @@ export const App = () => {
     })
 
     store.dispatch(loadUser());
+
+    getStripeApiKey();
 
   },[]);
 
@@ -52,6 +71,15 @@ export const App = () => {
 
          {/* <Switch> */}
             { isAuthenticated && <UserOptions user={user} /> }
+            {
+              stripeApiKey && (
+                
+                  <Elements stripe={loadStripe(stripeApiKey)}>
+                  <ProtectedRoute exact path='/process/payment' component={Payment} />
+                  </Elements>
+                  
+              )
+            }
             <Route exact path='/' component={HomePage} />
             <Route exact path='/product/:id' component={ProductDetails} />
             <Route exact path='/about' component={About} />
@@ -65,7 +93,9 @@ export const App = () => {
             <Route exact path='/password/forgot' component={ForgotPassword} />
             <Route exact path='/password/reset/:token' component={ResetPassword} />
             <Route exact path='/cart' component={Cart} />
-
+            <ProtectedRoute exact path='/shipping' component={Shipping} />
+            <ProtectedRoute exact path='/order/confirm' component={ConfirmOrder} />
+            
         {/* </Switch> */}
 
         {/* end pages */}

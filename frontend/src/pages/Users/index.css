@@ -1,9 +1,9 @@
 .login-wrapper {
 
-    background: #280739;
+    background: #1A2F58;
     padding-left: 30px;
     padding-right: 30px;
-    box-shadow: 0 4px 10px #00000029;
+    box-shadow: 0 4px 10px #1A2F58;
 }
 
 .login-form input {
@@ -121,4 +121,10 @@
     color: #ffffff;
     background-color: transparent;
     border-color: #fff;
+}
+
+.banner img {
+    height: 50vh;
+    background-size: cover;
+    object-fit: cover;
 }

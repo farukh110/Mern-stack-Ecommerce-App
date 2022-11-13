@@ -1,28 +1,28 @@
 .contact-form {
     overflow: hidden;
-    background: #280739;
+    background: #E3CEB9;
 }
 
 .contact-form h1 {
     font-size: 45px;
     font-weight: bold;
-    color: #ffffff;
+    color: #193058;
 }
 
 .contact-form p {
-    color: #ffffff;
+    color: #193058;
 }
 
 .btn-action {
 
     font-size: 22px;
-    border: 1.5px solid #ffffff;
+    border: 1.5px solid #193058;
     background: transparent;
 }
 
 .btn-action:hover {
-    background: #ffffff;
-    border: 1.5px solid #ffffff;
+    background: #193058;
+    border: 1.5px solid #193058;
     color: #280739;
 }
 
@@ -34,25 +34,25 @@ iframe {
 .main-form input {
 
     background: transparent;
-    border: 2px solid #ffffff;
+    border: 2px solid #193058;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
 .main-form input:focus {
     background: transparent;
-    border-color: #ffffff;
-    color: #ffffff;
+    border-color: #193058;
+    color: #193058;
 }
 
 .main-form input::placeholder {
-    color: #ffffff;
+    color: #193058;
 }
 
 .main-form select {
 
     background: transparent;
-    border: 2px solid #ffffff;
+    border: 2px solid #193058;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -60,24 +60,24 @@ iframe {
 .main-form select:focus,
 .main-form select:focus-visible {
     background: transparent;
-    color: #ffffff;
-    border-color: #ffffff;
+    color: #193058;
+    border-color: #193058;
 }
 
 .main-form select option {
 
     background: #280739 !important;
-    color: #ffffff;
+    color: #193058;
 }
 
 .main-form select {
-    color: #ffffff;
+    color: #193058;
 }
 
 .main-form textarea {
 
     background: transparent;
-    border: 2px solid #ffffff;
+    border: 2px solid #193058;
     height: 175px;
     resize: none;
 }
@@ -85,11 +85,11 @@ iframe {
 .main-form textarea:focus {
 
     background: transparent;
-    border-color: #ffffff;
-    color: #ffffff;
+    border-color: #193058;
+    color: #193058;
 }
 
 .main-form textarea::placeholder {
 
-    color: #ffffff;
+    color: #193058;
 }

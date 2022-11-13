@@ -1,0 +1,9 @@
+.MuiStepConnector-root {
+    height: 1px;
+    background: #9ca6c8;
+}
+
+.MuiStepConnector-acrive,
+.MuiStepConnector-completed {
+    background: #9ca6c8;
+}
