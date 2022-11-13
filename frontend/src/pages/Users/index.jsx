@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Loader from '../../components/layouts/loader';
 
-const LoginRegister = ({ history }) => {
+const LoginRegister = ({ history, location }) => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -31,19 +31,6 @@ const LoginRegister = ({ history }) => {
 
     const [avatar, setAvatar] = useState();
     const [avatarPreview, setAvatarPreview] = useState("/profile.png");
-
-    useEffect(() => {
-
-        if (error) {
-            alert.error(error);
-            dispatch(clearErrors());
-        }
-
-        if (isAuthenticated) {
-            history.push("/account");
-        }
-
-    }, [dispatch, error, alert, history, isAuthenticated]);
 
     const loginSubmit = (e) => {
 
@@ -88,6 +75,23 @@ const LoginRegister = ({ history }) => {
         }
 
     }
+
+    const redirect = location.search ? location.search.split("=")[1] : "/account";
+
+    useEffect(() => {
+
+        if (error) {
+            alert.error(error);
+            dispatch(clearErrors());
+        }
+
+        if (isAuthenticated) {
+            history.push(redirect);
+            // history.push("/account");
+        }
+
+    }, [dispatch, error, alert, history, isAuthenticated, redirect]);
+
 
     return (
         <>

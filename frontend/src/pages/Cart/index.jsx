@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addItemsToCart, removeItemFromCart } from '../../actions/Cart/cartAction';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 
-const Cart = () => {
+const Cart = ({ history }) => {
 
     const dispatch = useDispatch();
     const { cartItems } = useSelector((state) => state.cart);
@@ -44,6 +44,11 @@ const Cart = () => {
     const deleteCartItems = (id) => {
 
         dispatch(removeItemFromCart(id));
+    }
+
+    const checkoutProcess = () => {
+
+        history.push("/login?redirect=shipping")
     }
 
     return (
@@ -189,7 +194,7 @@ const Cart = () => {
 
                                     <div className='checkout-content'>
 
-                                        <button className='btn btn-success'>
+                                        <button className='btn btn-success' onClick={checkoutProcess}>
                                             Checkout
                                         </button>
 
